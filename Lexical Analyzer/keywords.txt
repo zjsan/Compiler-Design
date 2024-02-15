@@ -1,0 +1,15 @@
+//printf("%s", *string);
+    if(strcmp(string, "def") || strcmp(string, "and") || strcmp(string, "as") || strcmp(string, "assert")  || strcmp(string, "break") 
+		|| strcmp(string, "class") || strcmp(string, "continue") || strcmp(string, "del") || strcmp(string, "if") || strcmp(string, "else") ||
+		strcmp(string, "elif") ||strcmp(string, "except") || strcmp(string, "False") || strcmp(string, "finally") || strcmp(string, "for") || 
+        strcmp(string,"from") || strcmp(string, "global") || strcmp(string, "if") || strcmp(string, "import") || strcmp(string,"in") || 
+        strcmp(string, "is") || strcmp(string, "lambda") || strcmp(string, "None") || strcmp(string, "nonlocal") || strcmp(string, "not") ||
+        strcmp(string,"or") || strcmp(string,"pass") || strcmp(string,"raise") || strcmp(string, "return") || strcmp(string,"True") || 
+        strcmp(string,"try") || strcmp(string,"while") || strcmp(string, "with") || strcmp(string,"yield"))
+	{
+		return true;
+	}
+    else
+    {
+        return false;
+    }
