@@ -2,9 +2,6 @@
 <identifier>: x
 <operator>: >
 <number>: 5
-<Token>: ):
 <special_character>: newline
 <identifier>: print("greater")
-<special_character>: newline
 <identifier>: else:
-<special_character>: newline

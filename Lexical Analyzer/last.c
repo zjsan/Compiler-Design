@@ -110,7 +110,7 @@ void tokenizer(FILE *input_file, FILE *output_file)
 
 bool keyword(char *string)
 {
-    char *keywords[] = {"if", "else", "printf"};
+    char *keywords[] = {"if", "else", "print"};
 
     for (int i = 0; i < sizeof(keywords) / sizeof(keywords[0]); i++)
     {
