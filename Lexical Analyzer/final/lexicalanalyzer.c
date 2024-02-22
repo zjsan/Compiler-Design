@@ -63,7 +63,7 @@ int keywordValidator(const char lexeme[]) {
 bool digit(char ch) {
     return ch >= '0' && ch <= '9';
 }
-//jerome
+
 // method to check if a character is an operator
 int operator(char ch) {
     // Check if the character is one of the operators
