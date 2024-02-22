@@ -43,7 +43,7 @@ int main() {
 
 
 int keyword(const char lexeme[]) {
-    // keywords used in switch case
+
     const char * keywords[] = {
         "if",
         "else",
@@ -112,7 +112,7 @@ void tokenizer(const char input[], FILE * outputFile) {
         }
 
         // Tokenizing numbers
-        if (digit(input[buffer]) || (input[buffer] == '.' && digit(input[buffer + 1]))) {
+        else if (digit(input[buffer]) || (input[buffer] == '.' && digit(input[buffer + 1]))) {
             int index = 0;
             while (digit(input[buffer]) || input[buffer] == '.') {
                 lexeme[index++] = input[buffer++];
@@ -122,7 +122,7 @@ void tokenizer(const char input[], FILE * outputFile) {
             continue;
         }
         // Tokenizing identifiers and keywords
-        if (isalpha(input[buffer]) || input[buffer] == '_') {
+        else if (isalpha(input[buffer]) || input[buffer] == '_') {
             int index = 0;
             while (isalnum(input[buffer]) || input[buffer] == '_') {
                 lexeme[index++] = input[buffer++];
@@ -138,7 +138,7 @@ void tokenizer(const char input[], FILE * outputFile) {
         }
 
         // Tokenizing operators
-        if (operator(input[buffer])) {
+        else if (operator(input[buffer])) {
             lexeme[0] = input[buffer++];
             lexeme[1] = '\0';
             fprintf(outputFile, "<operator> \n", lexeme);
@@ -146,7 +146,7 @@ void tokenizer(const char input[], FILE * outputFile) {
         }
 
         // Tokenizing special symbols
-        if (specialSymbol(input[buffer])) {
+        else if (specialSymbol(input[buffer])) {
             lexeme[0] = input[buffer++];
             lexeme[1] = '\0';
             fprintf(outputFile, "<special symbol> \n", lexeme);
@@ -154,7 +154,7 @@ void tokenizer(const char input[], FILE * outputFile) {
         }
         
         // Tokenizing delimiter symbols
-        if (delimiter(input[buffer])) {
+        else if (delimiter(input[buffer])) {
             lexeme[0] = input[buffer++];
             lexeme[1] = '\0';
             fprintf(outputFile, "%s\n", lexeme);
