@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-// function prototype
+
 int keyword(const char lexeme[]);
 int operator(char ch);
 int specialSymbol(char ch);
@@ -41,8 +41,8 @@ int main() {
     return 0;
 }
 
-// method to validate keywords
-int keywordValidator(const char lexeme[]) {
+
+int keyword(const char lexeme[]) {
     // keywords used in switch case
     const char * keywords[] = {
         "if",
@@ -121,7 +121,6 @@ void tokenizer(const char input[], FILE * outputFile) {
             fprintf(outputFile, "<number> \n", lexeme);
             continue;
         }
-// jerome
         // Tokenizing identifiers and keywords
         if (isalpha(input[buffer]) || input[buffer] == '_') {
             int index = 0;
@@ -130,7 +129,7 @@ void tokenizer(const char input[], FILE * outputFile) {
             }
             lexeme[index] = '\0';
 
-            if (keywordValidator(lexeme)) {
+            if (keyword(lexeme)) {
                 fprintf(outputFile, "<keyword> \n", lexeme);
             } else {
                 fprintf(outputFile, "<identifier> \n", lexeme);
